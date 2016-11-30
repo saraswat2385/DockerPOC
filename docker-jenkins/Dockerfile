@@ -6,6 +6,8 @@ RUN apt-get update \
       && rm -rf /var/lib/apt/lists/*
 RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
 
+ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
+
 COPY basic-security.groovy /usr/share/jenkins/ref/init.groovy.d/basic-security.groovy
 USER jenkins
 COPY plugins.txt /usr/share/jenkins/plugins.txt

@@ -1,5 +1,5 @@
 build:
-	docker build -t tesco/jenkins .
+	docker build -t xbapaasp/jenkins .
 
 run:
-	docker run -d --env JAVA_OPTS=-Djenkins.install.runSetupWizard=false -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/usr/bin/docker -p 8080:8080 tesco/jenkins
+	docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 8080:8080 xbapaasp/jenkins
