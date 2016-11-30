@@ -10,3 +10,5 @@ junit:1.2
 workflow-step-api:1.14.2
 structs:1.3
 script-security:1.13
+googleanalytics:latest
+job-dsl:latest
