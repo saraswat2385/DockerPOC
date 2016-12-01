@@ -1,21 +1,17 @@
-job("CodeStability{{PROJ_ID}}") {
-  logRotator(60, 20, 1, -1)
-  description('Code Stability for application {{PROJ_ID}}')
-  scm {
-    git {
+mavenJob('CodeStability{{PROJ_ID}}') {
+  description("Code Stability for application {{PROJ_ID}}")
+  logRotator(-1, 10)
+    scm {
+      git {
       branch('*/{{REPO_BRANCH}}')
-      remote {
-        name('')
-        refspec('')
-        url('{{REPO_URL}}')
+        remote {
+          name('')
+          refspec('')
+          url('{{REPO_URL}}')
+        }
       }
     }
-  }
-  steps {
-    maven {
-      goals('clean compile')
-      mavenInstallation('maven2')
-      rootPOM('pom.xml')
-    }
-  }
+  //please enable the maven in your jenkins form jenkins configuration
+  goals('clean compile -Dfindbugs.skip')
+  rootPOM('pom.xml')
 }

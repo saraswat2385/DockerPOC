@@ -13,3 +13,4 @@ script-security:1.13
 googleanalytics:latest
 job-dsl:latest
 github:latest
+maven-plugin:latest
