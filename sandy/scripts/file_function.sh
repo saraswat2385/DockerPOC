@@ -11,5 +11,5 @@ function create_jobdsl_file_from_template() {
 
   sed -i "s/{{PROJ_ID}}/${PROJ_ID}/" ${TARGET_FILE}
   sed -i "s/{{REPO_BRANCH}}/${REPO_BRANCH}/" ${TARGET_FILE}
-  sed -i "s/{{REPO_URL}}/${REPO_URL}/" ${TARGET_FILE}
+  sed -i "s|{{REPO_URL}}|${REPO_URL}|" ${TARGET_FILE}
 }
