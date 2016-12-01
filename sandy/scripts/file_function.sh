@@ -8,4 +8,8 @@ function create_jobdsl_file_from_template() {
   TARGET_FILE=${TARGET_DIR}/${FILE_TYPE}.groovy
 
   cp ${TEMPLATE_FILE} ${TARGET_FILE}
+
+  sed -i "s/{{PROJ_ID}}/${PROJ_ID}/" ${TARGET_FILE}
+  sed -i "s/{{REPO_BRANCH}}/\${REPO_BRANCH}/" ${TARGET_FILE}
+  sed -i "s/{{REPO_URL}}/\${REPO_URL}/" ${TARGET_FILE}
 }
