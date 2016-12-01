@@ -1,4 +1,4 @@
-job("Code Stability {{PROJ_ID}}") {
+job("CodeStability{{PROJ_ID}}") {
   logRotator(60, 20, 1, -1)
   description('Code Stability for application {{PROJ_ID}}')
   scm {
