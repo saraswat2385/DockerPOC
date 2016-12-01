@@ -12,3 +12,4 @@ structs:1.3
 script-security:1.13
 googleanalytics:latest
 job-dsl:latest
+github:latest
