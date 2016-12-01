@@ -1,0 +1,21 @@
+job("Code Stability {{PROJ_ID}}") {
+  logRotator(60, 20, 1, -1)
+  description('Code Stability for application {{PROJ_ID}}')
+  scm {
+    git {
+      branch('*/{{REPO_BRANCH}}')
+      remote {
+        name('')
+        refspec('')
+        url('{{REPO_URL}}')
+      }
+    }
+  }
+  steps {
+    maven {
+      goals('clean test')
+      mavenInstallation('maven2')
+      rootPOM('pom.xml')
+    }
+  }
+}

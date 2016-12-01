@@ -19,6 +19,10 @@ COPY build/create-seed-job.groovy /usr/share/jenkins/ref/init.groovy.d/create-se
 RUN mkdir -p /usr/share/jenkins/ref/jobs/SeedJob/workspace/
 COPY jobdsl/* /usr/share/jenkins/ref/jobs/SeedJob/workspace/
 
+RUN mkdir -p ${JENKINS_HOME}/data
+COPY jobdsl-template ${JENKINS_HOME}/data/jobdsl-template/
+COPY scripts ${JENKINS_HOME}/data/scripts/
+
 USER root
 RUN chown jenkins: $(find /usr/share/jenkins/ref -type f -name '*.groovy')
 USER jenkins
