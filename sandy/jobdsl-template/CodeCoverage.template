@@ -13,7 +13,7 @@ job("Code Stability {{PROJ_ID}}") {
   }
   steps {
     maven {
-      goals('clean test')
+      goals('clean compile')
       mavenInstallation('maven2')
       rootPOM('pom.xml')
     }
