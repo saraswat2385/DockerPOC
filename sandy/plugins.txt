@@ -16,9 +16,21 @@ matrix-project:1.7.1
 workflow-scm-step:1.14.2
 scm-api:1.2
 workflow-step-api:1.14.2
-structs:1.3
+structs:1.5
 script-security:1.13
 googleanalytics:latest
 job-dsl:latest
 
 dashboard-view:2.0
+
+docker-commons:1.5
+credentials:2.1.10
+credentials-binding:1.10
+docker-build-publish:1.3.2
+
+jackson2-api:2.7.3
+icon-shim:2.0.3
+aws-credentials:1.16
+authentication-tokens:1.3
+aws-java-sdk:1.11.37
+amazon-ecr:1.4
