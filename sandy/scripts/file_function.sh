@@ -5,7 +5,7 @@ function create_jobdsl_file_from_template() {
   FILE_TYPE=$4
   TEMPLATE_FILE=${JENKINS_HOME}/data/jobdsl-template/${FILE_TYPE}.template
   TARGET_DIR=${JENKINS_HOME}/jobs/SeedJob/workspace
-  TARGET_FILE=${TARGET_DIR}/${FILE_TYPE}.groovy
+  TARGET_FILE=${TARGET_DIR}/${FILE_TYPE}_${PROJ_ID}_${REPO_BRANCH}.groovy
 
   cp ${TEMPLATE_FILE} ${TARGET_FILE}
 
