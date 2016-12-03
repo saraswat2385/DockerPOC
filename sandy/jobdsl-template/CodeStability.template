@@ -1,5 +1,5 @@
-mavenJob('CodeCoverage{{PROJ_ID}}{{REPO_BRANCH}}') {
-  description("Code Coverate for application {{PROJ_ID}}")
+mavenJob('CodeStability{{PROJ_ID}}{{REPO_BRANCH}}') {
+  description("Code Stability for application {{PROJ_ID}}")
   logRotator(-1, 10)
     scm {
       git {
@@ -12,6 +12,6 @@ mavenJob('CodeCoverage{{PROJ_ID}}{{REPO_BRANCH}}') {
       }
     }
   //please enable the maven in your jenkins form jenkins configuration
-  goals('clean cobertura:cobertura -Dfindbugs.skip')
+  goals('clean compile -Dfindbugs.skip')
   rootPOM('pom.xml')
 }
