@@ -12,6 +12,16 @@ job('JenkinsImageGenerator') {
     }
   }
   steps {
-    shell('#!/bin/bash \n cd sandy \n docker build -t xbapaasp/jenkins . \n docker tag xbapaasp/jenkins 758718909236.dkr.ecr.us-west-2.amazonaws.com/xbapaasp/jenkins:1.0 \n docker push 758718909236.dkr.ecr.us-west-2.amazonaws.com/xbapaasp/jenkins')
+    dockerBuildAndPublish {
+         repositoryName('xbapaasp/jenkins')
+         tag('${BUILD_TIMESTAMP}')
+         dockerHostURI('tcp://docker-host.internal.xbapaasp.com:2376')
+         dockerRegistryURL('758718909236.dkr.ecr.us-west-2.amazonaws.com')
+         buildContext('sandy')
+         registryCredentials('docker-hub')
+         forcePull(false)
+         createFingerprints(false)
+         skipDecorate()
+    }
 	}
 }
