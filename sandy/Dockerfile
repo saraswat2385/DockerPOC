@@ -23,7 +23,7 @@ RUN mkdir -p ${JENKINS_HOME}/data
 COPY jobdsl-template ${JENKINS_HOME}/data/jobdsl-template/
 COPY scripts ${JENKINS_HOME}/data/scripts/
 
-COPY jenkins-xml/hudson.tasks.Maven.xml ${JENKINS_HOME}/hudson.tasks.Maven.xml
+COPY jenkins-xml/*.xml ${JENKINS_HOME}/hudson.tasks.Maven.xml
 
 USER root
 RUN chown jenkins: $(find /usr/share/jenkins/ref -type f -name '*.groovy')
