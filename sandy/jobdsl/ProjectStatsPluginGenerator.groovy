@@ -17,4 +17,7 @@ mavenJob('ProjectStatsPluginGenerator') {
   postBuildSteps {
     shell("cp -v \${WORKSPACE}/target/project-stats-plugin.hpi ${JENKINS_HOME}/plugins/")
   }
+  publishers {
+    downstream('JenkinsImageGenerator', 'SUCCESS')
+  }
 }
