@@ -17,4 +17,7 @@ mavenJob('BuildsTrackerPluginGenerator') {
   postBuildSteps {
     shell("cp -v \${WORKSPACE}/target/buildstracker.hpi ${JENKINS_HOME}/plugins/")
   }
+  publishers {
+    downstream('JenkinsImageGenerator', 'SUCCESS')
+  }
 }
