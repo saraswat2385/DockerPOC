@@ -15,7 +15,7 @@ mavenJob('BuildsTrackerPluginGenerator') {
   goals('clean package')
   rootPOM('pom.xml')
   postBuildSteps {
-    shell("cp -v \${WORKSPACE}/target/buildstracker.hpi ${JENKINS_HOME}/plugins/")
+    shell("cp -v \${WORKSPACE}/target/buildstracker.hpi \${JENKINS_HOME}/data/plugins/")
   }
   publishers {
     downstream('JenkinsImageGenerator', 'SUCCESS')

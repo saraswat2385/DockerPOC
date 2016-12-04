@@ -12,6 +12,7 @@ job('JenkinsImageGenerator') {
     }
   }
   steps {
+    shell("mkdir -p ${WORKSPACE}/sandy/plugins \n cp -v \${JENKINS_HOME}/data/plugins/*.hpi \${WORKSPACE}/sandy/plugins/")
     dockerBuildAndPublish {
          repositoryName('xbapaasp/jenkins')
          tag('${BUILD_TIMESTAMP}')

@@ -20,11 +20,18 @@ RUN mkdir -p /usr/share/jenkins/ref/jobs/SeedJob/workspace/
 COPY jobdsl/* /usr/share/jenkins/ref/jobs/SeedJob/workspace/
 
 RUN mkdir -p ${JENKINS_HOME}/data
-COPY jobdsl-template ${JENKINS_HOME}/data/jobdsl-template/
-COPY scripts ${JENKINS_HOME}/data/scripts/
+RUN mkdir -p ${JENKINS_HOME}/data/plugins
+
+COPY jobdsl-template/ ${JENKINS_HOME}/data/jobdsl-template/
+COPY scripts/ ${JENKINS_HOME}/data/scripts/
+COPY plugins/ ${JENKINS_HOME}/data/plugins/
 
 COPY jenkins-xml/*.xml ${JENKINS_HOME}/
 
+
+
 USER root
 RUN chown jenkins: $(find /usr/share/jenkins/ref -type f -name '*.groovy')
+RUN chown -R jenkins: ${JENKINS_HOME}/data
+RUN cp ${JENKINS_HOME}/data/plugins/*.hpi ${JENKINS_HOME}/plugins/
 USER jenkins
