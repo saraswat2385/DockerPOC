@@ -33,5 +33,7 @@ COPY jenkins-xml/*.xml ${JENKINS_HOME}/
 USER root
 RUN chown jenkins: $(find /usr/share/jenkins/ref -type f -name '*.groovy')
 RUN chown -R jenkins: ${JENKINS_HOME}/data
+RUN mkdir ${JENKINS_HOME}/plugins
+RUN chown -R jenkins: ${JENKINS_HOME}/plugins
 RUN cp ${JENKINS_HOME}/data/plugins/*.hpi ${JENKINS_HOME}/plugins/
 USER jenkins
