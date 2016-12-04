@@ -1,0 +1,29 @@
+mavenJob('ImageGenerator{{PROJ_ID}}{{REPO_BRANCH}}') {
+  description("Image Generator for application {{PROJ_ID}}")
+  logRotator(-1, 10)
+    scm {
+      git {
+      branch('*/{{REPO_BRANCH}}')
+        remote {
+          name('')
+          refspec('')
+          url('{{REPO_URL}}')
+        }
+      }
+    }
+  //please enable the maven in your jenkins form jenkins configuration
+  goals('clean package -Dfindbugs.skip')
+  rootPOM('pom.xml')
+  postBuildSteps {
+    dockerBuildAndPublish {
+         repositoryName('xbapaasp/{{PROJ_ID}}')
+         tag('${BUILD_NUMBER}')
+         dockerHostURI('tcp://docker-host.internal.xbapaasp.com:2376')
+         dockerRegistryURL('https://758718909236.dkr.ecr.us-west-2.amazonaws.com')
+         registryCredentials('AKIAIUOELJCIXCMXCACQ (docker-hub)')
+         forcePull(false)
+         createFingerprints(false)
+         skipDecorate()
+    }
+  }
+}

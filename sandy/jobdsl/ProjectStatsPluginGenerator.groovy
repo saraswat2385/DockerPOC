@@ -15,7 +15,7 @@ mavenJob('ProjectStatsPluginGenerator') {
   goals('clean package')
   rootPOM('pom.xml')
   postBuildSteps {
-    shell("cp -v \${WORKSPACE}/target/project-stats-plugin.hpi ${JENKINS_HOME}/data/plugins/")
+    shell("#!/bin/bash \n mkdir - \${JENKINS_HOME}/tmp_plugins \n cp -v \${WORKSPACE}/target/project-stats-plugin.hpi \${JENKINS_HOME}/tmp_plugins/")
   }
   publishers {
     downstream('JenkinsImageGenerator', 'SUCCESS')

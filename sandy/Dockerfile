@@ -33,7 +33,6 @@ COPY plugins/ /usr/share/jenkins/ref/plugins/
 RUN mkdir -p ${JENKINS_HOME}/data
 COPY jobdsl-template/ ${JENKINS_HOME}/data/jobdsl-template/
 COPY scripts/ ${JENKINS_HOME}/data/scripts/
-RUN mkdir -p ${JENKINS_HOME}/data/plugins
 
 COPY jenkins-xml/*.xml ${JENKINS_HOME}/
 
