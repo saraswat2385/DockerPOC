@@ -17,7 +17,7 @@ job('JenkinsImageGenerator') {
          repositoryName('xbapaasp/jenkins')
          tag('${BUILD_TIMESTAMP}')
          dockerHostURI('tcp://docker-host.internal.xbapaasp.com:2376')
-         dockerRegistryURL('758718909236.dkr.ecr.us-west-2.amazonaws.com')
+         dockerRegistryURL('https://758718909236.dkr.ecr.us-west-2.amazonaws.com')
          buildContext('sandy')
          registryCredentials('AKIAIUOELJCIXCMXCACQ (docker-hub)')
          forcePull(false)
