@@ -18,7 +18,7 @@ job('JenkinsImageGenerator') {
          dockerHostURI('tcp://docker-host.internal.xbapaasp.com:2376')
          dockerRegistryURL('758718909236.dkr.ecr.us-west-2.amazonaws.com')
          buildContext('sandy')
-         registryCredentials('docker-hub')
+         registryCredentials('AKIAIUOELJCIXCMXCACQ (docker-hub)')
          forcePull(false)
          createFingerprints(false)
          skipDecorate()
