@@ -9,4 +9,7 @@ job('CI Generator') {
   steps {
     shell('#!/bin/bash \n source ${JENKINS_HOME}/data/scripts/file_function.sh \n echo "Doing the CI setup of repo ${GIT_URL}" \n echo "Doing the CI setup of repo ${GIT_URL}" \n create_jobdsl_file_from_template ${PROJ_ID} ${REPO_BRANCH} ${GIT_URL} CodeCoverage \n create_jobdsl_file_from_template ${PROJ_ID} ${REPO_BRANCH} ${GIT_URL} CodeStability')
 	}
+  publishers {
+    downstream('SeedJob', 'SUCCESS')
+  }
 }
