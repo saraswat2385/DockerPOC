@@ -11,4 +11,15 @@ I'm a repo to do docker poc
   * ProjectStatsPluginGenerator: This jenkins job creates the artifact(hpi) for Project stats plugin.
   * BuildsTrackerPluginGenerator: This jenkins job creates the artifact(hpi) for Builds Tracker plugin.
   * JenkinsImageGenerator: This jenkins job creates the image of current jenkins setup, with the above 2 custom plugins installed and uploads it to a private docker repository(ECR).
-* 
+
+## How to get Started
+
+* Use terraform to create the setup
+  * Clone the terraform repo
+    * https://github.com/XbaPAASP/Terraform
+  * Run the terraform docker container
+    * make build
+    * make run
+  * Run terraform
+    * terraform plan
+    * terraform apply
