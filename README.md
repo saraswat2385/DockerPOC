@@ -23,3 +23,8 @@ I'm a repo to do docker poc
   * Run terraform
     * terraform plan
     * terraform apply
+  * login to docker ci server
+    * ssh docker-ci.internal.xbapaasp.com
+    * Run the jenkins docker container
+      * aws ecr get-login --region us-west-2
+      * docker run -d -p 8080:8080 758718909236.dkr.ecr.us-west-2.amazonaws.com/xbapaasp/jenkins

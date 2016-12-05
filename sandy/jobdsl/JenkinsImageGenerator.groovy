@@ -15,7 +15,7 @@ job('JenkinsImageGenerator') {
     shell("mkdir -p ${WORKSPACE}/sandy/plugins \n cp -v \${JENKINS_HOME}/tmp_plugins/*.hpi \${WORKSPACE}/sandy/plugins/")
     dockerBuildAndPublish {
          repositoryName('xbapaasp/jenkins')
-         tag('${BUILD_TIMESTAMP}')
+         tag('${BUILD_NUMBER}')
          dockerHostURI('tcp://docker-host.internal.xbapaasp.com:2376')
          dockerRegistryURL('https://758718909236.dkr.ecr.us-west-2.amazonaws.com')
          buildContext('sandy')
