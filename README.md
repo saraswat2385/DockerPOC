@@ -28,3 +28,6 @@ I'm a repo to do docker poc
     * Run the jenkins docker container
       * aws ecr get-login --region us-west-2
       * docker run -d -p 8080:8080 758718909236.dkr.ecr.us-west-2.amazonaws.com/xbapaasp/jenkins
+      * Figure out the ELB
+      * Login to jenkins server and set the AWS credentials
+        * http://docker-ci-682371895.us-west-2.elb.amazonaws.com/credentials/
