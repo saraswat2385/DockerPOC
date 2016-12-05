@@ -26,8 +26,10 @@ I'm a repo to do docker poc
   * login to docker ci server
     * ssh docker-ci.internal.xbapaasp.com
     * Run the jenkins docker container
+      * run aws confgiure to provide aws creds
       * aws ecr get-login --region us-west-2
       * docker run -d -p 8080:8080 758718909236.dkr.ecr.us-west-2.amazonaws.com/xbapaasp/jenkins
       * Figure out the ELB
       * Login to jenkins server and set the AWS credentials
         * http://docker-ci-682371895.us-west-2.elb.amazonaws.com/credentials/
+      * Go to google analytics(analytics.google.com) and set the url in Admin -> Property -> Property Settings
