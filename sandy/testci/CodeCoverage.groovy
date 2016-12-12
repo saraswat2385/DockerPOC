@@ -1,4 +1,4 @@
-mavenJob('CodeCoverageSpring3Hibernate') {
+mavenJob('odeCoverageSpring3Hibernate') {
   description("Code Coverage for spring3-Hibernate application")
   logRotator(-1, 10)
     scm {
