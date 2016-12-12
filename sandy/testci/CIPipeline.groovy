@@ -15,7 +15,7 @@ pipelineJob("PipeLine JobDsl") {
             url('https://github.com/XbaPAASP/DockerPOC.git')
           }
         }
-        scriptPath('testci/PipelineScript/pipeline.groovy')
+        scriptPath('sandy/testci/PipelineScript/pipeline.groovy')
       }
     }
   }

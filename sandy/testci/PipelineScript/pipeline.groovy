@@ -1,0 +1,5 @@
+stage 'Code Stability'
+stage 'Code Quality'
+stage 'Artifact Generator'
+stage 'Pre Prod Deployer'
+stage 'Prod Deployer'
