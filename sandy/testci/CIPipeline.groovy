@@ -1,4 +1,4 @@
-pipelineJob("PipeLine JobDsl") {
+pipelineJob("CI PipeLine") {
 
   logRotator(60, 20, 1, -1)
 
