@@ -1,4 +1,4 @@
-mavenJob('CodeQuality Spring3Hibernate') {
+mavenJob('CodeQualitySpring3Hibernate') {
   description("Code Quality for spring3-Hibernate application")
   logRotator(-1, 10)
     scm {

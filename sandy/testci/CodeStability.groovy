@@ -1,4 +1,4 @@
-mavenJob('CodeStability Spring3Hibernate') {
+mavenJob('CodeStabilitySpring3Hibernate') {
   description("Code Stability for application {{PROJ_ID}}")
   logRotator(-1, 10)
     scm {

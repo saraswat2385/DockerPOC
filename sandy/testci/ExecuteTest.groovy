@@ -1,4 +1,4 @@
-mavenJob('TestExecutor Spring3Hibernate') {
+mavenJob('TestExecutorSpring3Hibernate') {
   description("Test executor for spring3-Hibernat application")
   logRotator(-1, 10)
     scm {
