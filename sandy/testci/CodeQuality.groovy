@@ -1,5 +1,5 @@
-mavenJob('CodeStability Spring3Hibernate') {
-  description("Code Stability for application {{PROJ_ID}}")
+mavenJob('CodeQuality Spring3Hibernate') {
+  description("Code Quality for spring3-Hibernate application")
   logRotator(-1, 10)
     scm {
       git {

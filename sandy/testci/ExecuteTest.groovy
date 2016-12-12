@@ -1,5 +1,5 @@
-mavenJob('CodeStability Spring3Hibernate') {
-  description("Code Stability for application {{PROJ_ID}}")
+mavenJob('TestExecutor Spring3Hibernate') {
+  description("Test executor for spring3-Hibernat application")
   logRotator(-1, 10)
     scm {
       git {
@@ -12,6 +12,6 @@ mavenJob('CodeStability Spring3Hibernate') {
       }
     }
   //please enable the maven in your jenkins form jenkins configuration
-  goals('clean compile -Dfindbugs.skip')
+  goals('clean test -Dfindbugs.skip')
   rootPOM('pom.xml')
 }
