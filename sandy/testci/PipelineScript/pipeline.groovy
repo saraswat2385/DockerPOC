@@ -1,5 +1,5 @@
 stage 'Code Stability'
-build 'CodeStability'
+build 'CodeStabilitySpring3Hibernate'
 stage 'Code Quality'
 build 'TestExecutorSpring3Hibernate'
 build 'CodeQualitySpring3Hibernate'
