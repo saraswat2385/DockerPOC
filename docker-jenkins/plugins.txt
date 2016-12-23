@@ -1,5 +1,6 @@
 scm-api:latest
 git-client:latest
 git:latest
+workflow-aggregator:2.4
 greenballs:latest
 googleanalytics:latest
